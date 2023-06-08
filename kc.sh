@@ -36,6 +36,7 @@ fn_frontend() {
     while test $count -gt 0; do ((count=count - 1)); shift; done
 
     cd frontend
+    npm install
 
     case $1 in
         build)
