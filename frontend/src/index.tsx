@@ -1,15 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+
+import { configureStore } from "@reduxjs/toolkit";
+import { Store } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+
+import reducer from "./store/reducer";
+
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+const store: Store<ArticleState, ArticleAction> & {
+  dispatch: DispatchType;
+} = configureStore({ reducer: reducer, middleware: [thunk] });
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
