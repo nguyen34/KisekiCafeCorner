@@ -6,6 +6,7 @@ import { Article } from "./components/Article";
 import { AddArticle } from "./components/AddArticle";
 import { addArticle, removeArticle } from "./store/actionCreators";
 import { Dispatch } from "redux";
+import axios from "axios";
 
 const App: React.FC = () => {
   const articles: readonly IArticle[] = useSelector(
@@ -13,12 +14,29 @@ const App: React.FC = () => {
     shallowEqual
   );
 
+  const [backendArticles, setBackendArticles] = React.useState<IArticle[]>([]);
+
   const dispatch: Dispatch<any> = useDispatch();
 
   const saveArticle = React.useCallback(
     (article: IArticle) => dispatch(addArticle(article)),
     [dispatch]
   );
+
+  function fetchArticles() {
+    axios.get("/api/articles").then((res) => {
+      const articles: IArticle[] = res.data.map((article: any) => {
+        return {
+          id: article.id,
+          title: article.title,
+          body: article.body,
+        };
+      });
+      setBackendArticles(articles);
+      articles.forEach((article) => saveArticle(article));
+      console.log(articles);
+    });
+  }
 
   return (
     <main>
@@ -31,6 +49,7 @@ const App: React.FC = () => {
           removeArticle={removeArticle}
         />
       ))}
+      <button onClick={fetchArticles}>Fetch Articles</button>
     </main>
   );
 };
