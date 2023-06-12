@@ -18,7 +18,7 @@ export function removeArticle(article: IArticle) {
 }
 
 export function simulateHttpRequest(action: ArticleAction) {
-  return (dispatch: DispatchType) => {
+  return (dispatch: ArticleDispatchType) => {
     setTimeout(() => {
       dispatch(action)
     }, 500)

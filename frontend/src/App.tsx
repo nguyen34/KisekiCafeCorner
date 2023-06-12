@@ -1,10 +1,5 @@
 import * as React from "react";
-import {
-  useSelector,
-  shallowEqual,
-  useDispatch,
-  TypedUseSelectorHook,
-} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
 
 import { Article } from "./components/Article";
@@ -13,11 +8,13 @@ import {
   addArticle,
   removeArticle,
 } from "./store/reducers/articles/actionCreators";
+import { getGreeting } from "./store/reducers/landing/actionCreators";
 import { Dispatch } from "redux";
 import axios from "axios";
 
 const App: React.FC = () => {
   const articles = useSelector((state: any) => state.articles.articles);
+  const greeting = useSelector((state: any) => state.landing.greeting);
 
   const dispatch: Dispatch<any> = useDispatch();
 
@@ -39,9 +36,13 @@ const App: React.FC = () => {
     });
   }
 
+  React.useEffect(() => {
+    dispatch(getGreeting());
+  });
+
   return (
     <main>
-      <h1>My Articles</h1>
+      <h1>{greeting}</h1>
       <AddArticle saveArticle={saveArticle} />
       {articles.map((article: IArticle) => (
         <Article
