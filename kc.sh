@@ -84,6 +84,23 @@ fn_backend() {
     esac
 }
 
+fn_database() {
+    fn_get_run_args $@
+    count=$?
+    while test $count -gt 0; do ((count=count - 1)); shift; done
+    case $1 in
+        run|start)
+            sudo service postgresql start
+            ;;
+        reset|restart)
+            sudo service postgresql restart
+            ;;
+        *)
+            echo "Unknown command"
+            ;;
+    esac
+}
+
 
 arg=$1
 shift
@@ -97,6 +114,9 @@ case $arg in
 
     b|back|backend)
         fn_backend $@
+        ;;
+    db|database)
+        fn_database $@
         ;;
     *) 
         echo "Unknown command"
