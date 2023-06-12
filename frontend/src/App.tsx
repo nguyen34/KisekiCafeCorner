@@ -1,20 +1,23 @@
 import * as React from "react";
-import { useSelector, shallowEqual, useDispatch } from "react-redux";
+import {
+  useSelector,
+  shallowEqual,
+  useDispatch,
+  TypedUseSelectorHook,
+} from "react-redux";
 import "./App.css";
 
 import { Article } from "./components/Article";
 import { AddArticle } from "./components/AddArticle";
-import { addArticle, removeArticle } from "./store/actionCreators";
+import {
+  addArticle,
+  removeArticle,
+} from "./store/reducers/articles/actionCreators";
 import { Dispatch } from "redux";
 import axios from "axios";
 
 const App: React.FC = () => {
-  const articles: readonly IArticle[] = useSelector(
-    (state: ArticleState) => state.articles,
-    shallowEqual
-  );
-
-  const [backendArticles, setBackendArticles] = React.useState<IArticle[]>([]);
+  const articles = useSelector((state: any) => state.articles.articles);
 
   const dispatch: Dispatch<any> = useDispatch();
 
@@ -32,9 +35,7 @@ const App: React.FC = () => {
           body: article.body,
         };
       });
-      setBackendArticles(articles);
       articles.forEach((article) => saveArticle(article));
-      console.log(articles);
     });
   }
 

@@ -3,18 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import { configureStore } from "@reduxjs/toolkit";
-import { Store } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-import reducer from "./store/reducer";
+import reducer from "./store/index";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const store: Store<ArticleState, ArticleAction> & {
-  dispatch: DispatchType;
-} = configureStore({ reducer: reducer, middleware: [thunk] });
+const store = configureStore({ reducer: reducer, middleware: [thunk] });
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

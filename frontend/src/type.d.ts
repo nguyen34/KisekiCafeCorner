@@ -5,6 +5,7 @@ interface IArticle {
   }
   
   type ArticleState = {
+    name: string,
     articles: IArticle[]
   }
   

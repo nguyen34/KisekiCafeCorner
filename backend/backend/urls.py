@@ -25,4 +25,5 @@ router.register(r'articles', views.ArticleView, 'article')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('test_redux_django/', views.test_redux_django),
 ]

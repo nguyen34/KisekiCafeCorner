@@ -1,6 +1,7 @@
-import * as actionTypes from "./actionTypes"
+import * as actionTypes from "./actionTypes";
 
 const initialState: ArticleState = {
+  name:"Articles",
   articles: [
     {
       id: 1,
@@ -17,7 +18,7 @@ const initialState: ArticleState = {
   ],
 }
 
-const reducer = (
+const articleReducer = (
     state: ArticleState = initialState,
     action: ArticleAction
   ): ArticleState => {
@@ -44,4 +45,4 @@ const reducer = (
     return state
   }
   
-  export default reducer
+  export default articleReducer
