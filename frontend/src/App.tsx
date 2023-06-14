@@ -3,10 +3,20 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Articles from "./pages/Articles";
 import "./css/App.css";
+import background from "./assets/backgrounds/Wallpaper.png";
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
