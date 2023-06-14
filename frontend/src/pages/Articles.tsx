@@ -6,10 +6,10 @@ import { AddArticle } from "../components/AddArticle";
 import {
   addArticle,
   removeArticle,
+  fetchArticles,
 } from "../store/reducers/articles/actionCreators";
 import { getGreeting } from "../store/reducers/landing/actionCreators";
 import { Dispatch } from "redux";
-import axios from "axios";
 
 const Articles: React.FC = () => {
   const articles = useSelector((state: any) => state.articles.articles);
@@ -22,22 +22,11 @@ const Articles: React.FC = () => {
     [dispatch]
   );
 
-  function fetchArticles() {
-    axios.get("/api/articles").then((res) => {
-      const articles: IArticle[] = res.data.map((article: any) => {
-        return {
-          id: article.id,
-          title: article.title,
-          body: article.body,
-        };
-      });
-      articles.forEach((article) => saveArticle(article));
-    });
-  }
-
   React.useEffect(() => {
     dispatch(getGreeting());
   });
+
+  const fetchBackendArticles = () => dispatch(fetchArticles());
 
   return (
     <main>
@@ -50,7 +39,7 @@ const Articles: React.FC = () => {
           removeArticle={removeArticle}
         />
       ))}
-      <button onClick={fetchArticles}>Fetch Articles</button>
+      <button onClick={fetchBackendArticles}>Fetch Articles</button>
     </main>
   );
 };
