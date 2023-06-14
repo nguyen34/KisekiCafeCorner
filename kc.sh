@@ -60,13 +60,14 @@ fn_backend() {
     fn_get_run_args $@
     count=$?
     while test $count -gt 0; do ((count=count - 1)); shift; done
-
+    
     cd backend
     case $1 in
         env)
             pipenv shell
             ;;
         run|start)
+            fn_database start
             pipenv run python manage.py runserver
             ;;
         startapp)
