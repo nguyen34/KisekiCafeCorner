@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Articles from "./pages/Articles";
 import "./css/App.css";
 import background from "./assets/backgrounds/Wallpaper.png";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
         height: "100vh",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        overflow: "hidden",
       }}
     >
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
