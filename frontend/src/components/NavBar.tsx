@@ -5,9 +5,11 @@ import * as AiIcons from "react-icons/ai";
 import "../css/NavBar.css";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
+import { useSelector } from "react-redux";
 
 const NavBar: React.FC = () => {
   const [sidebar, setSidebar] = useState(false);
+  const pageHeader = useSelector((state: any) => state.app.pageHeader);
 
   const showSidebar = () => setSidebar(!sidebar);
   return (
@@ -16,6 +18,7 @@ const NavBar: React.FC = () => {
         <Link to="#" className="menu-bars">
           <FaIcons.FaBars onClick={showSidebar} />
         </Link>
+        <h1>{pageHeader}</h1>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items">

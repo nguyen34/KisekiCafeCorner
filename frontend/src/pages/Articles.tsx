@@ -8,6 +8,7 @@ import {
   removeArticle,
   fetchArticles,
 } from "../store/reducers/articles/actionCreators";
+import { setPageHeader } from "../store/reducers/app/actionCreators";
 import { getGreeting } from "../store/reducers/landing/actionCreators";
 import { Dispatch } from "redux";
 
@@ -24,6 +25,7 @@ const Articles: React.FC = () => {
 
   React.useEffect(() => {
     dispatch(getGreeting());
+    dispatch(setPageHeader("Articles"));
   });
 
   const fetchBackendArticles = () => dispatch(fetchArticles());

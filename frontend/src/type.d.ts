@@ -15,6 +15,10 @@ interface IArticle {
     greeting: string,
   }
 
+  type AppState = {
+    pageHeader: string,
+  }
+
   //Store Action Types
   type ArticleAction = {
     type: string
@@ -25,6 +29,12 @@ interface IArticle {
     type: string
     payload: any
   }
+
+  type AppAction = {
+    type: string
+    payload: any
+  }
   
   type ArticleDispatchType = (args: ArticleAction) => ArticleAction
   type LandingDispatchType = (args: LandingAction) => LandingAction
+  type AppDispatchType = (args: AppAction) => AppAction
