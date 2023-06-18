@@ -5,18 +5,31 @@ h1 {
 
 .home-page {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 90vh;
     width: 100vw;
     background: transparent;
 }
 
-.home-avatar{
-    max-height:90vh;
-    max-width: 100vw;
-    position: fixed; 
-    bottom: 0px; 
-    right: 0px;
+.home-avatar {
+    max-height:100%;
+    max-width: 100%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.home-text {
+    margin-left: 400px;
+    width: 30%;
+    margin-top: 100px;
+    margin-bottom: auto;
+}
+
+.avatar-container {
+    width: 100vw;
+    height: 90vh;
+    position: fixed;
 }

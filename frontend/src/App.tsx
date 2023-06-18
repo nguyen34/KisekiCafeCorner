@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Articles from "./pages/Articles";
 import "./css/App.css";
+import "./css/Animations.css";
 import background from "./assets/backgrounds/Wallpaper.png";
 import NavBar from "./components/NavBar";
 

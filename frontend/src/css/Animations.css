@@ -1,0 +1,10 @@
+.fade-in-right {
+    opacity: 0;
+    transform: translate3d(-50px, 0, 0);
+    transition: 0.3s all ease-in-out;
+}
+
+.fade-in-right:hover {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}

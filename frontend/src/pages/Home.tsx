@@ -14,10 +14,16 @@ const Home: React.FC = () => {
     <div>
       <h1>Welcome to the Kiseki Cafe!</h1>
       <div className="home-page">
-        <div>
-          <h2>What is the Kiseki Cafe?</h2>
+        <div className="home-text">
+          <h1>
+            Site's still a Work in Progress, hope to have a lot more going on
+            during this landing page, but until then, feel free to navigate
+            around using the menu icon on the top left!
+          </h1>
         </div>
-        <img className="home-avatar" src={zenPersona} alt="avatar" />
+        <div className="avatar-container fade-in-right">
+          <img className="home-avatar" src={zenPersona} alt="avatar" />
+        </div>
       </div>
     </div>
   );
