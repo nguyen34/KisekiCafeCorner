@@ -1,7 +1,5 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Articles from "./pages/Articles";
+import AppRouter from "./components/AppRouter";
+
 import "./css/App.css";
 import "./css/Animations.css";
 import background from "./assets/backgrounds/Wallpaper.png";
@@ -21,11 +19,7 @@ function App() {
       }}
     >
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="articles" element={<Articles />} />
-      </Routes>
+      <AppRouter />
     </div>
   );
 }

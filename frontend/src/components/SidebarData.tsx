@@ -1,6 +1,6 @@
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
+import * as BiIcons from "react-icons/bi";
 
 export const SidebarData = [
   {
@@ -16,9 +16,27 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Articles",
-    path: "/articles",
-    icon: <FaIcons.FaCartPlus />,
+    title: "Content",
+    path: "/content-creation",
+    icon: <IoIcons.IoLogoTwitch />,
+    cName: "nav-text",
+  },
+  {
+    title: "Recipes",
+    path: "/recipes",
+    icon: <BiIcons.BiFoodMenu />,
+    cName: "nav-text",
+  },
+  {
+    title: "Library",
+    path: "/library",
+    icon: <BiIcons.BiLibrary />,
+    cName: "nav-text",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+    icon: <AiIcons.AiFillContacts />,
     cName: "nav-text",
   },
 ];
