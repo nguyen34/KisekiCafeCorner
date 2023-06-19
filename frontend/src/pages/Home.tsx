@@ -12,9 +12,9 @@ const Home: React.FC = () => {
   });
   return (
     <div>
-      <h1>Welcome to the Kiseki Cafe!</h1>
+      <h1 className="fade-in-up">Welcome to the Kiseki Cafe!</h1>
       <div className="home-page">
-        <div className="home-text">
+        <div className="home-text fade-in-left-hover">
           <h1>
             Site's still a Work in Progress, hope to have a lot more going on
             during this landing page, but until then, feel free to navigate
