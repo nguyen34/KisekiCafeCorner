@@ -1,7 +1,4 @@
-:root {
-  --nav-bar-color: #0c81a8;
-  --nav-bar-icon-color: #f5f5f5;
-}
+@import './colors.css';
 
 .nav-bar {
     background: linear-gradient(90deg, var(--nav-bar-color), #ffffff);

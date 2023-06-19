@@ -1,0 +1,98 @@
+@import './colors.css';
+
+.chef-chat-message {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 16px;
+}
+
+.chef-gif {
+    height: 200px;
+}
+
+.chat-box {
+  margin: auto 16px;
+  max-width: 500px;
+  width: fit-content;
+  height: fit-content;
+  max-height: 100px;
+  background: var(--primary-color);
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--nav-bar-icon-color);
+  position:relative;
+}
+
+.chat-arrow-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid var(--primary-color);
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--primary-color);
+  border-bottom: 10px solid transparent;
+  right: -19px;
+  top: 6px;
+}
+
+.chat-arrow-right:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--primary-color);
+  border-top: 10px solid var(--primary-color);
+  border-bottom: 10px solid transparent;
+  left: -19px;
+  top: 6px;
+}
+
+.chat-arrow-down:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid var(--primary-color);
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--primary-color);
+  border-bottom: 10px solid transparent;
+  left: 19px;
+  bottom: -19px;
+}
+
+.chat-arrow-up:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--primary-color);
+  border-top: 10px solid var(--primary-color);
+  border-bottom: 10px solid transparent;
+  right: 19px;
+  bottom: -19px;
+}
+
+/* youtube link */
+.youtube{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 160px;
+  text-align: center;
+  padding: 15px 10px;
+  background: #bb0000;
+  border-radius: 5px;
+}
+
+.youtube a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
