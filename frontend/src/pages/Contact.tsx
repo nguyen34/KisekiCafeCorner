@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
   const message =
     "Contact Page currently Work In Progress. Chef is cooking so please be patient";
   return (
-    <div className="d-flex justify-center">
+    <div className="flex justify-center">
       <ChefChatMessage message={message} />
     </div>
   );

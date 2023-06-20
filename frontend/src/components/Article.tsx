@@ -21,7 +21,12 @@ export const Article: React.FC<Props> = ({ article, removeArticle }) => {
         <h1>{article.title}</h1>
         <p>{article.body}</p>
       </div>
-      <button onClick={() => deleteArticle(article)}>Delete</button>
+      <button
+        className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => deleteArticle(article)}
+      >
+        Delete
+      </button>
     </div>
   );
 };
