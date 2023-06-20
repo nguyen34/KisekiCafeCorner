@@ -13,24 +13,10 @@ h1 {
     background: transparent;
 }
 
-.home-avatar {
-    max-height:100%;
-    max-width: 100%;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-}
-
 .home-text {
     margin-left: 400px;
     width: 30%;
     margin-top: 100px;
     margin-bottom: auto;
     z-index: 1;
-}
-
-.avatar-container {
-    width: 100vw;
-    height: 90vh;
-    position: fixed;
 }

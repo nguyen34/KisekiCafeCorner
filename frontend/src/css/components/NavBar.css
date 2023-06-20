@@ -8,11 +8,6 @@
     align-items: center;
     text-align: left;
   }
-
-  .nav-header {
-    margin-left: auto;
-    margin-right: auto;
-  }
   
   .menu-bars {
     margin-left: 2rem;
@@ -62,10 +57,6 @@
   
   .nav-text a:hover {
     background-color: #6dd5f7;
-  }
-  
-  .nav-menu-items {
-    width: 100%;
   }
   
   .navbar-toggle {

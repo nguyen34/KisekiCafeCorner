@@ -18,10 +18,10 @@ const NavBar: React.FC = () => {
         <Link to="#" className="menu-bars">
           <FaIcons.FaBars onClick={showSidebar} />
         </Link>
-        <h1 className="nav-header">{pageHeader}</h1>
+        <h1 className="mx-auto">{pageHeader}</h1>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul className="nav-menu-items">
+        <ul className="w-full">
           <li className="navbar-toggle">
             <Link to="#" className="menu-bars">
               <AiIcons.AiOutlineClose onClick={showSidebar} />

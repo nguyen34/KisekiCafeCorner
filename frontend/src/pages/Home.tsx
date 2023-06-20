@@ -20,8 +20,12 @@ const Home: React.FC = () => {
         <div className="home-text fade-in-left-hover">
           <div className="chat-box chat-arrow-left">{message}</div>
         </div>
-        <div className="avatar-container fade-in-right">
-          <img className="home-avatar" src={zenPersona} alt="avatar" />
+        <div className="w-screen h-screen-90 fixed fade-in-right">
+          <img
+            className="max-h-full max-w-full right-0 bottom-0 absolute"
+            src={zenPersona}
+            alt="avatar"
+          />
         </div>
       </div>
     </div>
