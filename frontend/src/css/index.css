@@ -1,5 +1,7 @@
 @import './font.css';
 @import './colors.css';
+@import './animations.css';
+@import './utilities.css';
 
 body {
   height: 100vh;

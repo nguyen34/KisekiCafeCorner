@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import "./css/index.css";
 import "./css/utilities.css";
-import "./css/Animations.css";
+import "./css/animations.css";
 
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";

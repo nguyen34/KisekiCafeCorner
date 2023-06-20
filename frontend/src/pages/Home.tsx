@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../css/Home.css";
+import "../css/pages/Home.css";
 import { useDispatch } from "react-redux";
 import zenPersona from "../assets/avatars/zen_persona.png";
 import { setPageHeader } from "../store/reducers/app/actionCreators";

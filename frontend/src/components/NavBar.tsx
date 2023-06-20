@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
-import "../css/NavBar.css";
+import "../css/components/NavBar.css";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { useSelector } from "react-redux";

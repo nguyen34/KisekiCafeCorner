@@ -1,5 +1,5 @@
 import AppRouter from "./components/AppRouter";
-import "./css/App.css";
+import "./css/pages/App.css";
 import background from "./assets/backgrounds/Wallpaper.png";
 import NavBar from "./components/NavBar";
 

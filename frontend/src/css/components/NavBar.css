@@ -1,4 +1,4 @@
-@import './colors.css';
+@import '../colors.css';
 
 .nav-bar {
     background: linear-gradient(90deg, var(--nav-bar-color), #ffffff);
