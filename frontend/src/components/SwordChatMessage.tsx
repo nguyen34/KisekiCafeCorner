@@ -13,7 +13,7 @@ export const SwordChatMessage: React.FC<Props> = ({ message }) => {
         {message}
       </div>
       <div>
-        <img className="chef-gif mx-16" src={swordGif} alt="sword" />
+        <img className="h-52 mx-16" src={swordGif} alt="sword" />
       </div>
     </div>
   );
