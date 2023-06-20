@@ -1,17 +1,10 @@
 @import '../colors.css';
 
-.chef-chat-message {
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  margin: 16px;
-}
-
 .chef-gif {
     height: 200px;
 }
 
-.chat-box {
+.chat-box-solid {
   margin: auto 16px;
   max-width: 600px;
   width: fit-content;
@@ -25,7 +18,7 @@
   position:relative;
 }
 
-.chat-arrow-left:before {
+.chat-arrow-solid-left:before {
   content: "";
   width: 0px;
   height: 0px;
@@ -38,7 +31,7 @@
   top: 6px;
 }
 
-.chat-arrow-right:before {
+.chat-arrow-solid-right:before {
   content: "";
   width: 0px;
   height: 0px;
@@ -51,7 +44,7 @@
   top: 6px;
 }
 
-.chat-arrow-down:before {
+.chat-arrow-solid-bottom-left:before {
   content: "";
   width: 0px;
   height: 0px;
@@ -64,7 +57,7 @@
   bottom: -19px;
 }
 
-.chat-arrow-up:before {
+.chat-arrow-solid-bottom-right:before {
   content: "";
   width: 0px;
   height: 0px;
