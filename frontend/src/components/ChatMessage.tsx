@@ -1,6 +1,6 @@
 import * as React from "react";
 import chefGif from "../assets/gif/chef.gif";
-import "../css/components/ChefChatMessage.css";
+import "../css/components/ChatMessage.css";
 
 type Props = {
   message: string;

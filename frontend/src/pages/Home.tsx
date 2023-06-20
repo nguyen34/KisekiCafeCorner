@@ -1,5 +1,6 @@
 import * as React from "react";
 import "../css/pages/Home.css";
+import "../css/components/ChatMessage.css";
 import { useDispatch } from "react-redux";
 import zenPersona from "../assets/avatars/zen_persona.png";
 import { setPageHeader } from "../store/reducers/app/actionCreators";
@@ -10,16 +11,14 @@ const Home: React.FC = () => {
   React.useEffect(() => {
     dispatch(setPageHeader("Home"));
   });
+  const message =
+    "Site's still a Work in Progress, hope to have a lot more going on during this landing page, but until then, feel free to navigate around using the menu icon on the top left!";
   return (
     <div>
       <h1 className="fade-in-up">Welcome to the Kiseki Cafe!</h1>
       <div className="home-page">
         <div className="home-text fade-in-left-hover">
-          <h1>
-            Site's still a Work in Progress, hope to have a lot more going on
-            during this landing page, but until then, feel free to navigate
-            around using the menu icon on the top left!
-          </h1>
+          <div className="chat-box chat-arrow-left">{message}</div>
         </div>
         <div className="avatar-container fade-in-right">
           <img className="home-avatar" src={zenPersona} alt="avatar" />

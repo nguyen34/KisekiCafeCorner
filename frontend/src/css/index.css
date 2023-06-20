@@ -2,6 +2,9 @@
 @import './colors.css';
 @import './animations.css';
 @import './utilities.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   height: 100vh;

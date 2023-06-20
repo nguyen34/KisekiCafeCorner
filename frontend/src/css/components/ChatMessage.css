@@ -13,10 +13,9 @@
 
 .chat-box {
   margin: auto 16px;
-  max-width: 500px;
+  max-width: 600px;
   width: fit-content;
   height: fit-content;
-  max-height: 100px;
   background: var(--primary-color);
   padding: 20px;
   text-align: center;
