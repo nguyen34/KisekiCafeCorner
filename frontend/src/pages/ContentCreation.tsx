@@ -2,7 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { setPageHeader } from "../store/reducers/app/actionCreators";
 import { Dispatch } from "redux";
-import { ChefChatMessage } from "../components/ChatMessage";
+import { ChefChatMessage } from "../components/ChefChatMessage";
 
 const ContentCreation: React.FC = () => {
   const dispatch: Dispatch<any> = useDispatch();
