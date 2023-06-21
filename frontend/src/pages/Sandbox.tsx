@@ -14,7 +14,10 @@ const Sandbox: React.FC = () => {
     <div>
       <h2>Use this Sandbox to put any testing front-end components here</h2>
       <Articles />
-      <ZenChatMessage message="Hello World" type="sword" />
+      <ZenChatMessage
+        message="Hello World. I am Zen No Kiseki, the Chef of Cold Steel"
+        type="sword"
+      />
     </div>
   );
 };

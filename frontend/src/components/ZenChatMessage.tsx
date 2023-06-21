@@ -20,12 +20,12 @@ export const ZenChatMessage: React.FC<Props> = ({ message, type }) => {
   const chatBoxClass = classNames({
     "chat-box-solid": true,
     "chat-arrow-solid-left": type === "chef",
-    "chat-arrow-solid-bottom-right": type === "sword",
+    "chat-arrow-solid-bottom": type === "sword",
   });
 
   const imgClass = classNames({
     "h-52": true,
-    "mx-16": type === "sword",
+    "mx-auto": type === "sword",
   });
   return (
     <div className={chatContainerClass}>
