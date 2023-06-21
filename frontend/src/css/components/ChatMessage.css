@@ -14,7 +14,7 @@
   position: relative;
 }
 
-.chat-arrow-solid-left:before {
+.chat-arrow-solid-top-right:before {
   content: "";
   width: 0px;
   height: 0px;
@@ -27,7 +27,7 @@
   top: 6px;
 }
 
-.chat-arrow-solid-right:before {
+.chat-arrow-solid-top-left:before {
   content: "";
   width: 0px;
   height: 0px;
