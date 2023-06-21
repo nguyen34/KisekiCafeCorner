@@ -18,6 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from landing import views
+from itertools import chain
+
+from emails.urls.emails import urlpatterns as emails_urls
+from landing.urls.landing import urlpatterns as landing_urls
+
 
 router = routers.DefaultRouter()
 router.register(r'articles', views.ArticleView, 'article')
@@ -25,5 +30,6 @@ router.register(r'articles', views.ArticleView, 'article')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('test_redux_django/', views.test_redux_django),
 ]
+
+urlpatterns = list(chain(urlpatterns, emails_urls, landing_urls))

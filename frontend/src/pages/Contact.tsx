@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setPageHeader } from "../store/reducers/app/actionCreators";
 import { Dispatch } from "redux";
 import { ZenChatMessage } from "../components/ZenChatMessage";
+import EmailSendingForm from "../components/EmailSendingForm";
 
 const Contact: React.FC = () => {
   const dispatch: Dispatch<any> = useDispatch();
@@ -12,8 +13,11 @@ const Contact: React.FC = () => {
   const message =
     "Contact Page currently Work In Progress. Chef is cooking so please be patient";
   return (
-    <div className="flex justify-center">
-      <ZenChatMessage message={message} type="chef" />
+    <div>
+      <div className="flex justify-center">
+        <ZenChatMessage message={message} type="chef" />
+      </div>
+      <EmailSendingForm />
     </div>
   );
 };
