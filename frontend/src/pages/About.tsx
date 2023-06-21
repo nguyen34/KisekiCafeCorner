@@ -2,7 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { setPageHeader } from "../store/reducers/app/actionCreators";
 import { Dispatch } from "redux";
-import { ChefChatMessage } from "../components/ChefChatMessage";
+import { ZenChatMessage } from "../components/ZenChatMessage";
 
 const About: React.FC = () => {
   const dispatch: Dispatch<any> = useDispatch();
@@ -13,7 +13,7 @@ const About: React.FC = () => {
     "About Page currently Work In Progress. Chef is cooking so please be patient";
   return (
     <div className="flex justify-center">
-      <ChefChatMessage message={message} />
+      <ZenChatMessage message={message} type="chef" />
     </div>
   );
 };
