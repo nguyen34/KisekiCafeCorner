@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kiseki', 
-        'USER': 'jnguyen', 
+        'NAME': 'kiseki',
+        'USER': 'jnguyen',
         'PASSWORD': 'SenNoKiseki4!',
-        'HOST': '127.0.0.1', 
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
@@ -130,5 +130,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+    'http://localhost:3000'
 ]
+
+HOST_EMAIL = "zennokisekivtuber@gmail.com"
+HOST_PASSWORD = "wlvhrzrkppmvvxin"
+SECONDARY_HOST_EMAIL = "nguyenjohnson65@gmail.com"

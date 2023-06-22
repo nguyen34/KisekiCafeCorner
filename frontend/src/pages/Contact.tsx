@@ -15,7 +15,9 @@ const Contact: React.FC = () => {
   return (
     <div>
       <div className="flex justify-center">
-        <ZenChatMessage message={message} type="chef" />
+        <ZenChatMessage type="chef">
+          <p>{message}</p>
+        </ZenChatMessage>
       </div>
       <EmailSendingForm />
     </div>

@@ -13,7 +13,7 @@ const Library: React.FC = () => {
     "Library Page currently Work In Progress. Chef is cooking so please be patient";
   return (
     <div className="flex justify-center">
-      <ZenChatMessage message={message} type="chef" />
+      <ZenChatMessage type="chef">{message}</ZenChatMessage>
     </div>
   );
 };
