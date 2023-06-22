@@ -18,7 +18,7 @@ const Home: React.FC = () => {
       <h1 className="fade-in-up">Welcome to the Kiseki Cafe!</h1>
       <div className="home-page">
         <div className="home-text fade-in-left-hover">
-          <div className="chat-box chat-arrow-left">{message}</div>
+          <div className="chat-box-solid chat-arrow-solid-right">{message}</div>
         </div>
         <div className="w-screen h-screen-90 fixed fade-in-right">
           <img
