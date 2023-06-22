@@ -134,5 +134,4 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 HOST_EMAIL = "zennokisekivtuber@gmail.com"
-HOST_PASSWORD = "wlvhrzrkppmvvxin"
 SECONDARY_HOST_EMAIL = "nguyenjohnson65@gmail.com"
