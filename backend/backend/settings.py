@@ -10,10 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
+import dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Add .env variables anywhere before SECRET_KEY
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 
 # Quick-start development settings - unsuitable for production
@@ -82,9 +89,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'kiseki',
         'USER': 'jnguyen',
-        'PASSWORD': 'SenNoKiseki4!',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -133,5 +140,6 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
 
-HOST_EMAIL = "zennokisekivtuber@gmail.com"
-SECONDARY_HOST_EMAIL = "nguyenjohnson65@gmail.com"
+HOST_EMAIL = os.environ.get("HOST_EMAIL")
+HOST_PASSWORD = os.environ.get("HOST_PASSWORD")
+SECONDARY_HOST_EMAIL = os.environ.get("SECONDARY_HOST_EMAIL")
