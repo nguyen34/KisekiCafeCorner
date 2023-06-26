@@ -8,6 +8,7 @@ const EmailSendingForm: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [response, setResponse] = React.useState("");
+  const [disableButton, setDisableButton] = React.useState(true);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -27,6 +28,14 @@ const EmailSendingForm: React.FC = () => {
       });
   };
 
+  React.useEffect(() => {
+    if (name === "" || email === "" || message === "") {
+      setDisableButton(true);
+    } else {
+      setDisableButton(false);
+    }
+  }, [name, email, message]);
+
   return (
     <div>
       <form
@@ -37,24 +46,29 @@ const EmailSendingForm: React.FC = () => {
       >
         <div className="pb-4">
           <TextField
+            error={name === ""}
             id="sender-name"
             className="w-96"
             label="Name"
             variant="filled"
             onChange={(event) => setName(event.target.value)}
+            helperText={name === "" ? "Name is required" : ""}
           />
         </div>
         <div className="pb-4">
           <TextField
+            error={email === ""}
             id="sender-email"
             className="w-96"
             label="Email"
             variant="filled"
             onChange={(event) => setEmail(event.target.value)}
+            helperText={email === "" ? "Email is required" : ""}
           />
         </div>
         <div className="pb-4">
           <TextField
+            error={message === ""}
             id="sender-message"
             className="w-96"
             label="Message"
@@ -62,10 +76,11 @@ const EmailSendingForm: React.FC = () => {
             rows={8}
             variant="filled"
             onChange={(event) => setMessage(event.target.value)}
+            helperText={message === "" ? "Message is required" : ""}
           />
         </div>
         <div className="pb-4">
-          <Button type="submit" variant="contained">
+          <Button type="submit" variant="contained" disabled={disableButton}>
             Send Message
           </Button>
         </div>
