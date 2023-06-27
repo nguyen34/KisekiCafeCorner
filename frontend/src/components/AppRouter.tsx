@@ -5,6 +5,8 @@ import Contact from "../pages/Contact";
 import Recipes from "../pages/Recipes";
 import ContentCreation from "../pages/ContentCreation";
 import Library from "../pages/Library";
+import Portfolio from "../pages/Portfolio";
+import Karaoke from "../pages/Karaoke";
 import Sandbox from "../pages/Sandbox";
 
 const AppRouter: React.FC = () => {
@@ -17,6 +19,8 @@ const AppRouter: React.FC = () => {
         <Route path="recipes" element={<Recipes />} />
         <Route path="content-creation" element={<ContentCreation />} />
         <Route path="library" element={<Library />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="karaoke" element={<Karaoke />} />
         <Route path="sandbox" element={<Sandbox />} />
       </Routes>
     </div>
