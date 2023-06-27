@@ -12,8 +12,7 @@ const EmailSendingForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    axios.defaults.xsrfCookieName = "csrftoken";
-    axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+
     axios
       .post("/api/send_email_to_host/", {
         name: name,
