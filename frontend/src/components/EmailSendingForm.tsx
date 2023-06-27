@@ -2,6 +2,7 @@ import * as React from "react";
 import { TextField, Button } from "@mui/material";
 import axios from "axios";
 import { CustomSnackbar } from "./CustomSnackbar";
+import { validateEmail } from "../helpers/rules";
 
 const EmailSendingForm: React.FC = () => {
   const [name, setName] = React.useState("");
@@ -28,7 +29,8 @@ const EmailSendingForm: React.FC = () => {
   };
 
   React.useEffect(() => {
-    if (name === "" || email === "" || message === "") {
+    const isValidEmail = validateEmail(email);
+    if (name === "" || !isValidEmail || message === "") {
       setDisableButton(true);
     } else {
       setDisableButton(false);
@@ -56,13 +58,13 @@ const EmailSendingForm: React.FC = () => {
         </div>
         <div className="pb-4">
           <TextField
-            error={email === ""}
+            error={validateEmail(email) === false}
             id="sender-email"
             className="w-96"
             label="Email"
             variant="filled"
             onChange={(event) => setEmail(event.target.value)}
-            helperText={email === "" ? "Email is required" : ""}
+            helperText={email === "" ? "Please enter a valid email" : ""}
           />
         </div>
         <div className="pb-4">
