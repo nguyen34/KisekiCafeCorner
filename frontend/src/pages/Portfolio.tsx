@@ -11,7 +11,7 @@ const Portfolio: React.FC = () => {
     dispatch(setPageHeader("Work Portfolio"));
   });
   return (
-    <div>
+    <div className="my-8">
       {PortfolioData.map((data, index) => {
         return (
           <PortfolioCard
