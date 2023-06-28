@@ -1,3 +1,7 @@
 .h-screen-90 {
      height: 90vh;
 }
+
+.max-w-half {
+     max-width: 50%;
+}
