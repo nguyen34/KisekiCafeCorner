@@ -20,13 +20,14 @@ export const PortfolioCard: React.FC<Props> = ({
   link,
 }) => {
   const cardClass = classNames({
-    "flex flex-col items-center justify-around bg-sky-200 gap-4": true,
+    "flex flex-col items-center justify-around bg-sky-200 gap-4 py-4 px-4 rounded-xl shadow-m":
+      true,
     "order-2 fade-in-left": side === "left",
     "order-1 fade-in-right": side === "right",
   });
 
   const imageClass = classNames({
-    "w-1/3 min-w-max max-w-xs": true,
+    "w-1/3 min-w-max h-96 max-w-xs": true,
     "order-1 fade-in-right": side === "left",
     "order-2 fade-in-left": side === "right",
   });
@@ -50,7 +51,7 @@ export const PortfolioCard: React.FC<Props> = ({
         <p className={textClass}>{children}</p>
         <a className={linkClass} href={link} target="_blank" rel="noreferrer">
           {" "}
-          Link to Project
+          Link to Github
         </a>
       </div>
       <div className={imageClass}>

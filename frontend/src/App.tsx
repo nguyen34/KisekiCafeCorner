@@ -13,7 +13,7 @@ function App() {
         height: "100vh",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        overflow: "hidden",
+        overflow: "auto",
       }}
     >
       <NavBar />

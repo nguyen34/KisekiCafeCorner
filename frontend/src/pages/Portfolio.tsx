@@ -12,17 +12,22 @@ const Portfolio: React.FC = () => {
   });
   return (
     <div className="my-8">
+      <h1>
+        <span className="font-bold">Personal Projects</span>
+      </h1>
       {PortfolioData.map((data, index) => {
         return (
-          <PortfolioCard
-            key={index}
-            side={index % 2 === 0 ? "left" : "right"}
-            title={data.title}
-            image={data.image}
-            link={data.link}
-          >
-            {data.description}
-          </PortfolioCard>
+          <div className="py-8">
+            <PortfolioCard
+              key={index}
+              side={index % 2 === 0 ? "left" : "right"}
+              title={data.title}
+              image={data.image}
+              link={data.link}
+            >
+              {data.description}
+            </PortfolioCard>
+          </div>
         );
       })}
     </div>
