@@ -17,7 +17,7 @@ export const PortfolioCard: React.FC<Props> = ({
   side,
   title,
   image,
-  link,
+  link = "",
 }) => {
   const cardClass = classNames({
     "flex flex-col items-center justify-around bg-sky-200 gap-4 py-4 px-4 rounded-xl shadow-m":
@@ -49,10 +49,12 @@ export const PortfolioCard: React.FC<Props> = ({
       <div className={cardClass}>
         <h1 className={titleClass}>{title}</h1>
         <p className={textClass}>{children}</p>
-        <a className={linkClass} href={link} target="_blank" rel="noreferrer">
-          {" "}
-          Link to Github
-        </a>
+        {link !== "" && (
+          <a className={linkClass} href={link} target="_blank" rel="noreferrer">
+            {" "}
+            Link
+          </a>
+        )}
       </div>
       <div className={imageClass}>
         <img className="w-full h-full" src={image} alt={title} />

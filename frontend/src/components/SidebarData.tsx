@@ -35,12 +35,6 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Portfolio",
-    path: "/portfolio",
-    icon: <AiIcons.AiFillProject />,
-    cName: "nav-text",
-  },
-  {
     title: "Karaoke",
     path: "/karaoke",
     icon: <TbIcons.TbMicrophone2 />,
