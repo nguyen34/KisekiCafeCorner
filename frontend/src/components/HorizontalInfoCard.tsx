@@ -26,14 +26,20 @@ export const HorizontalInfoCard: React.FC<Props> = ({
   const cardClass = classNames({
     "flex flex-1 flex-col items-center justify-around bg-sky-200 gap-4 py-4 px-4 shadow-m":
       true,
-    "order-2 fade-in-left": side === "left",
-    "order-1 fade-in-right": side === "right",
+    "order-2 fade-in-left rounded-r-lg": side === "left",
+    "order-1 fade-in-right rounded-l-lg": side === "right",
   });
 
-  const imageClass = classNames({
+  const imageContainerClass = classNames({
     "flex-1": true,
     "order-1 fade-in-right": side === "left",
     "order-2 fade-in-left": side === "right",
+  });
+
+  const imageClass = classNames({
+    "w-full h-auto": true,
+    "rounded-l-lg": side === "left",
+    "rounded-r-lg": side === "right",
   });
 
   const titleClass = classNames({
@@ -62,8 +68,8 @@ export const HorizontalInfoCard: React.FC<Props> = ({
           </a>
         )}
       </div>
-      <div className={imageClass}>
-        <img className="w-full h-auto" src={imageLink} alt={title} />
+      <div className={imageContainerClass}>
+        <img className={imageClass} src={imageLink} alt={title} />
       </div>
     </div>
   );
