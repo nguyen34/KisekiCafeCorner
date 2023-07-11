@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ReactNode } from "react";
 import classNames from "classnames";
+import useResponsive from "../hooks/useResponsive";
 
 type Side = "left" | "right";
 
@@ -9,25 +10,28 @@ type Props = {
   side: Side;
   title: string;
   image: string;
+  imagePortrait: string;
   link: string;
 };
 
-export const PortfolioCard: React.FC<Props> = ({
+export const HorizontalInfoCard: React.FC<Props> = ({
   children,
   side,
   title,
   image,
+  imagePortrait = "",
   link = "",
 }) => {
+  const isPortrait = useResponsive().isPortrait;
   const cardClass = classNames({
-    "flex flex-col items-center justify-around bg-sky-200 gap-4 py-4 px-4 rounded-xl shadow-m":
+    "flex flex-1 flex-col items-center justify-around bg-sky-200 gap-4 py-4 px-4 shadow-m":
       true,
     "order-2 fade-in-left": side === "left",
     "order-1 fade-in-right": side === "right",
   });
 
   const imageClass = classNames({
-    "w-1/3 min-w-max h-96 max-w-xs": true,
+    "flex-1": true,
     "order-1 fade-in-right": side === "left",
     "order-2 fade-in-left": side === "right",
   });
@@ -44,8 +48,10 @@ export const PortfolioCard: React.FC<Props> = ({
     "text-center order-3 hover:text-violet-500": true,
   });
 
+  const imageLink = isPortrait ? imagePortrait : image;
+
   return (
-    <div className="flex flex-row max-w-half gap-4 mx-auto">
+    <div className="flex flex-row mx-auto">
       <div className={cardClass}>
         <h1 className={titleClass}>{title}</h1>
         <p className={textClass}>{children}</p>
@@ -57,7 +63,7 @@ export const PortfolioCard: React.FC<Props> = ({
         )}
       </div>
       <div className={imageClass}>
-        <img className="w-full h-full" src={image} alt={title} />
+        <img className="w-full h-auto" src={imageLink} alt={title} />
       </div>
     </div>
   );
