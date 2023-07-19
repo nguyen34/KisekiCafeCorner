@@ -1,0 +1,50 @@
+<!-- HTML Sandbox code for testing and debugging pure html code -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comments</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <form>
+        <input type="text" id="comment" />
+        <input type="button" id="postComment" value="Post" @click="postComment" />
+      </form>
+      <ul id="commentList">
+        <li v-for="comment in commentList">{{ comment }}</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    // Write your code here
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        commentList: []
+      },
+      methods: {
+        postComment: function() {
+          const comment = document.getElementById("comment").value;
+          if (comment){
+            this.commentList.push(comment);
+            document.getElementById("comment").value = "";
+          }
+        }
+      }
+    });
+        
+    // Example case
+    vm.commentList = ["comment!"];
+
+    let commentInput = document.getElementById("comment");
+    let button = document.getElementById("postComment");
+    commentInput.value = "test";
+    commentInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+    button.click();
+    setTimeout(() => console.log(document.getElementById("commentList").innerHTML));
+  </script>
+</body>
+</html>

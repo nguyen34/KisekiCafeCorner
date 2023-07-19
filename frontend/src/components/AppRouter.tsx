@@ -6,7 +6,7 @@ import Recipes from "../pages/Recipes";
 import ContentCreation from "../pages/ContentCreation";
 import Library from "../pages/Library";
 import Karaoke from "../pages/Karaoke";
-import Sandbox from "../pages/Sandbox";
+import Sandbox from "../sandbox/Sandbox";
 
 const AppRouter: React.FC = () => {
   return (
