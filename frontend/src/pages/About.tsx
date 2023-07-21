@@ -5,8 +5,7 @@ import { Dispatch } from "redux";
 import classNames from "classnames";
 import zenCafe from "../assets/artwork/zen_cafe.png";
 import zenCafePortrait from "../assets/artwork/zen_cafe_portrait.png";
-import zenYumi from "../assets/artwork/zen_yumi.png";
-import zenYumiPortrait from "../assets/artwork/zen_yumi_portrait.png";
+import { AboutData } from "../components/AboutData";
 import useResponsive from "../hooks/useResponsive";
 import { HorizontalInfoCard } from "../components/HorizontalInfoCard";
 
@@ -42,7 +41,8 @@ const About: React.FC = () => {
   });
 
   const infoCardContainerClass = classNames({
-    "flex flex-col w-7/12 h-full justify-start py-4 mx-auto fade-in-top": true,
+    "flex flex-col w-7/12 h-full justify-start py-4 mx-auto fade-in-top gap-4":
+      true,
   });
 
   return (
@@ -71,19 +71,20 @@ const About: React.FC = () => {
         </div>
       </div>
       <div className={infoCardContainerClass}>
-        <HorizontalInfoCard
-          side="left"
-          title="Twitch"
-          image={zenYumi}
-          imagePortrait={zenYumiPortrait}
-          link="https://www.twitch.tv/ZenNoKiseki"
-        >
-          Zen is a variety streamer who especially enjoys playing JRPGs and
-          Fighting games. He also enjoys playing rhythm games, and has a mild
-          interest in horror games, despite his low tolerance to spooky things.
-          However, his patrons seems to really enjoys it, so he does his best to
-          tolerate and entertain for their sakes.
-        </HorizontalInfoCard>
+        {AboutData.map((data, index) => {
+          return (
+            <HorizontalInfoCard
+              key={index}
+              side={index % 2 === 0 ? "left" : "right"}
+              title={data.title}
+              image={data.image}
+              imagePortrait={data.imagePortrait}
+              link={data.link}
+            >
+              {data.content}
+            </HorizontalInfoCard>
+          );
+        })}
       </div>
     </div>
   );
