@@ -4,7 +4,7 @@ import * as AiIcons from "react-icons/ai";
 
 import "../css/components/NavBar.css";
 import { Link } from "react-router-dom";
-import { SidebarData } from "./SidebarData";
+import { SidebarData } from "../config/SidebarData";
 import { useSelector } from "react-redux";
 
 const NavBar: React.FC = () => {

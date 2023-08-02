@@ -5,7 +5,7 @@ import { Dispatch } from "redux";
 import classNames from "classnames";
 import zenCafe from "../assets/artwork/zen_cafe.png";
 import zenCafePortrait from "../assets/artwork/zen_cafe_portrait.png";
-import { AboutData } from "../components/AboutData";
+import { AboutData } from "../config/AboutData";
 import useResponsive from "../hooks/useResponsive";
 import { HorizontalInfoCard } from "../components/HorizontalInfoCard";
 

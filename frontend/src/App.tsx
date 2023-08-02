@@ -1,4 +1,4 @@
-import AppRouter from "./components/AppRouter";
+import AppRouter from "./router/AppRouter";
 import "./css/pages/App.css";
 import background from "./assets/backgrounds/Wallpaper.png";
 import NavBar from "./components/NavBar";
