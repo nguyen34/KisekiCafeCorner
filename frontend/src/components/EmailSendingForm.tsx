@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TextField, Button } from "@mui/material";
-import axios from "axios";
+import axiosConfig from "../plugins/axiosConfig";
 import { CustomSnackbar } from "./CustomSnackbar";
 import { validateEmail } from "../helpers/rules";
 
@@ -14,7 +14,7 @@ const EmailSendingForm: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    axios
+    axiosConfig
       .post("/api/send_email_to_host/", {
         name: name,
         email: email,

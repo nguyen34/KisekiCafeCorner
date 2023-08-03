@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosConfig from "../../../plugins/axiosConfig";
 import * as actionTypes from "./actionTypes";
 
 export function addArticle(article: IArticle) {
@@ -20,7 +20,7 @@ export function removeArticle(article: IArticle) {
 
 export function fetchArticles() {
   return (dispatch: ArticleDispatchType) => {
-    axios.get('/api/articles')
+    axiosConfig.get('/api/articles/')
       .then((response) => {
         const articles: IArticle[] = response.data.map((article: any) => {
           return {

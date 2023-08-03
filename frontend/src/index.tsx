@@ -13,12 +13,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
-import axios from "axios";
-
-// Axios CSRF token setup
-axios.defaults.xsrfCookieName = "csrftoken";
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-
 const store = configureStore({ reducer: reducer, middleware: [thunk] });
 
 const root = ReactDOM.createRoot(

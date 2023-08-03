@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 import dotenv
 from pathlib import Path
+from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,6 +142,16 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
 
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'X-CSRFTOKEN',
+]
+
 HOST_EMAIL = os.environ.get("HOST_EMAIL")
 HOST_PASSWORD = os.environ.get("HOST_PASSWORD")
 SECONDARY_HOST_EMAIL = os.environ.get("SECONDARY_HOST_EMAIL")
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
+
+# Needs to be true for production
+SECURE_SSL_REDIRECT = False

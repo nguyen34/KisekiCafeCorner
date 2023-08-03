@@ -1,10 +1,10 @@
 
 import * as actionTypes from "./actionTypes";
-import axios from 'axios';
+import axiosConfig from '../../../plugins/axiosConfig';
 
 export function getGreeting() {
     return (dispatch: LandingDispatchType) => {
-        axios.get('/api/test_redux_django')
+        axiosConfig.get('/api/test_redux_django/')
             .then((response) => {
                 console.log(response);
                 dispatch({

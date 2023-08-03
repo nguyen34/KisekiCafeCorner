@@ -4,10 +4,14 @@ from django.http import JsonResponse
 from django.core.handlers.wsgi import WSGIRequest
 from emails import business
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
+# TODO: Setup CSRF token so we no longer have to use this decorator
 
+
+@csrf_exempt
 def send_email_to_host(request: WSGIRequest) -> JsonResponse:
     if request.method != "POST":
         return JsonResponse({"error": "Invalid request method"}, status=400)
