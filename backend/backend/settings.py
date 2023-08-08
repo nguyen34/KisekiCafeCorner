@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-3$oaxsinovm2+jp32m_2wpp@aq^#amr)0sj=-l-y)x*h)s^q%@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'landing',
     'emails',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -138,13 +139,37 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'X-CSRFTOKEN',
+]
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
 ]
 
 HOST_EMAIL = os.environ.get("HOST_EMAIL")

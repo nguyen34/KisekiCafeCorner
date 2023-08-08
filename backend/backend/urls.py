@@ -22,6 +22,7 @@ from itertools import chain
 
 from emails.urls.emails import urlpatterns as emails_urls
 from landing.urls.landing import urlpatterns as landing_urls
+from app.urls.app import urlpatterns as app_urls
 
 
 router = routers.DefaultRouter()
@@ -32,4 +33,4 @@ urlpatterns = [
     path('api/', include(router.urls)),
 ]
 
-urlpatterns = list(chain(urlpatterns, emails_urls, landing_urls))
+urlpatterns = list(chain(urlpatterns, emails_urls, landing_urls, app_urls))
