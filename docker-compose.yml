@@ -1,0 +1,127 @@
+version: "3.9"
+name: "kisekicafe"
+
+# Kiseki Cafe
+x-env-kc-version: &env-kc-version ${KISEKI_CAFE_VERSION:-v0.0}
+
+# Database
+x-env-db-name: &env-db-name ${DB_HOST:-kisekicafe}
+x-env-db-user: &env-db-user ${DB_USER:-zennokiseki}
+x-env-db-password: &env-db-password ${DB_PASSWORD:-8L3@ve$1Blad3}
+x-env-db-host: &env-db-host ${DB_HOST:-kc-database}
+x-env-db-port: &env-db-port ${DB_PORT:-5432}
+x-env-admin-email: &env-admin-email ${ADMIN_EMAIL:-nguyenjohnson65@gmail.com}
+x-env-admin-password: &env-admin-password ${ADMIN_PASSWORD:-bnb@KTB6hrjfpwyud}
+
+# Django
+x-env-django-port: &env-django-port ${DJANGO_PORT:-8000}
+x-env-django-host: &env-django-host ${DJANGO_HOST:-backend}
+# <'local'|'development'|'staging'|'production'>
+x-env-environment: &env-environment ${ENVIRONMENT:-local}
+x-env-domain: &env-domain ${DOMAIN:-}
+x-env-host-email: &env-host-email ${HOST_EMAIL:-zennokisekivtuber@gmail.com}
+x-env-host-password: &env-host-password ${HOST_PASSWORD:-wlvhrzrkppmvvxin}
+x-env-secondary-host-email: &env-secondary-host-email ${SECONDARY_HOST_EMAIL:-nguyenjohnson65@gmail.com}
+
+# React
+x-env-react-http: &env-react-http ${REACT_HTTP:-}
+x-env-react-host: &env-react-host ${REACT_HOST:-127.0.0.1}
+x-env-react-port: &env-react-port ${REACT_PORT:-5173}
+x-env-django-react-prod-mode: &env-django-react-prod-mode ${DJANGO_REACT_PROD_MODE:-}
+
+# Shared backend environment settings
+x-backend-environment: &backend-environment
+  ENVIRONMENT: *env-environment
+  DOMAIN: *env-domain
+  DB_NAME: *env-db-name
+  DB_USER: *env-db-user
+  DB_PASSWORD: *env-db-password
+  DB_HOST: *env-db-host
+  DB_PORT: *env-db-port
+  DJANGO_PORT: *env-django-port
+  DJANGO_HOST: *env-django-host
+  PYTHONUNBUFFERED: 1
+  KC_VERSION: *env-kc-version
+  HOST_EMAIL: *env-host-email
+  HOST_PASSWORD: *env-host-password
+  SECONDARY_HOST_EMAIL: *env-secondary-host-email
+
+services:
+  database:
+    hostname: kc-database
+    container_name: kc-database
+    image: postgres
+    restart: always
+    volumes:
+      - database:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: *env-db-user
+      POSTGRES_DB: *env-db-name
+      POSTGRES_PASSWORD: *env-db-password
+      ALLOW_EMPTY_PASSWORD: yes
+    networks:
+      - react-network
+    ports:
+      - "5432:5432"
+  database-admin:
+    container_name: kc-pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    profiles:
+      - monitor
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - database
+    environment:
+      PGADMIN_DEFAULT_EMAIL: *env-admin-email
+      PGADMIN_DEFAULT_PASSWORD: *env-admin-password
+    networks:
+      - react-network
+    ports:
+      - "8080:80"
+  frontend:
+    hostname: kc-frontend
+    container_name: kc-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - react-network
+    environment:
+      REACT_HTTP: *env-react-http
+      REACT_HOST: *env-react-host
+      REACT_PORT: *env-react-port
+    volumes:
+      - ./frontend/:/frontend/
+      - /frontend/node_modules
+  backend:
+    hostname: kc-backend
+    container_name: kc-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    links:
+      - database
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - react-network
+    environment: *backend-environment
+    volumes:
+      - ./backend/:/backend/
+      - /backend/node_modules
+
+volumes:
+  database:
+  pgadmin-data:
+
+networks:
+  react-network:
+    driver: bridge
