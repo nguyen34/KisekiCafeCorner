@@ -43,6 +43,8 @@ def send_email_to_host(from_email: str, message: str, from_name: str) -> None:
 
 
 def validate_email(email: str) -> bool:
+    if not email:
+        return False
     regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
     if not re.match(regex, email):
         return False

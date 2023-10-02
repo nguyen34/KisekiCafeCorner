@@ -3,5 +3,6 @@ import emails.views as views
 
 
 urlpatterns = [
-    path('api/send_email_to_host/', views.send_email_to_host),
+    path('api/send_email_to_host/', views.send_email_to_host,
+         name='send_email_to_host'),
 ]
