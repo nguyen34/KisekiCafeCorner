@@ -1,3 +1,4 @@
+import React from 'react';
 import AppRouter from './router/AppRouter';
 import './css/pages/App.css';
 import background from './assets/backgrounds/Wallpaper.png';

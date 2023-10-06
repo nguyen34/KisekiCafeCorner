@@ -49,13 +49,13 @@ const About: React.FC = () => {
 		<div className="flex justify-center flex-col">
 			<div className={bannerCardClass}>
 				<div className={infoContentClass}>
-					<h1 className={titleClass}>About 'Zen No Kiseki'</h1>
+					<h1 className={titleClass}>About &#39;Zen No Kiseki&#39;</h1>
 					<p className={contentClass}>
-						Otherwise known as the 'Chef of Cold Steel', Zen No Kiseki is an
-						English VTuber, hailing from a foreign land known as 'Canada'. A
-						trained martial artist, Zen is a master of the 'Eight Leaves One
-						Blade' school of swordsmanship, holding the title of 'Divine Blade
-						of Cold Steel'.
+						Otherwise known as the &#39;Chef of Cold Steel&#39;, Zen No Kiseki
+						is an English VTuber, hailing from a foreign land known as
+						&#39;Canada&#39;. A trained martial artist, Zen is a master of the
+						&#39;Eight Leaves One Blade&#39; school of swordsmanship, holding
+						the title of &#39;Divine Blade of Cold Steel&#39;.
 					</p>
 					<p className={contentClass}>
 						Originally a swordsman for hire, Zen has since retired from his

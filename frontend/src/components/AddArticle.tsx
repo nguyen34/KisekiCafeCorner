@@ -5,7 +5,7 @@ type Props = {
 };
 
 export const AddArticle: React.FC<Props> = ({ saveArticle }) => {
-	const [article, setArticle] = React.useState<IArticle | {}>();
+	const [article, setArticle] = React.useState<IArticle | object>();
 
 	const handleArticleData = (e: React.FormEvent<HTMLInputElement>) => {
 		setArticle({

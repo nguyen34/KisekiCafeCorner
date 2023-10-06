@@ -21,7 +21,7 @@ const articleReducer = (
 	action: ArticleAction
 ): ArticleState => {
 	switch (action.type) {
-		case actionTypes.ADD_ARTICLE:
+		case actionTypes.ADD_ARTICLE: {
 			const newArticle: IArticle = {
 				id: Math.random(), // not really unique
 				title: action.article.title,
@@ -31,7 +31,8 @@ const articleReducer = (
 				...state,
 				articles: state.articles.concat(newArticle),
 			};
-		case actionTypes.REMOVE_ARTICLE:
+		}
+		case actionTypes.REMOVE_ARTICLE: {
 			const updatedArticles: IArticle[] = state.articles.filter(
 				(article) => article.id !== action.article.id
 			);
@@ -39,8 +40,10 @@ const articleReducer = (
 				...state,
 				articles: updatedArticles,
 			};
+		}
+		default:
+			return state;
 	}
-	return state;
 };
 
 export default articleReducer;
