@@ -1,66 +1,66 @@
 .fade-in-right-hover {
-    opacity: 0;
-    transform: translate3d(-50px, 0, 0);
-    transition: 0.3s all ease-in-out;
+	opacity: 0;
+	transform: translate3d(-50px, 0, 0);
+	transition: 0.3s all ease-in-out;
 }
 
 .fade-in-right-hover:hover {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
 }
 
 .fade-in-left-hover {
-    opacity: 0;
-    transform: translate3d(50px, 0, 0);
-    transition: 0.3s all ease-in-out;
+	opacity: 0;
+	transform: translate3d(50px, 0, 0);
+	transition: 0.3s all ease-in-out;
 }
 
 .fade-in-left-hover:hover {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
 }
 
 @keyframes fade-in-up-animation {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 50px, 0);
-    }
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 .fade-in-up {
-    animation: fade-in-up-animation 0.3s ease-in-out;
+	animation: fade-in-up-animation 0.3s ease-in-out;
 }
 
 @keyframes fade-in-right-animation {
-    0% {
-        opacity: 0;
-        transform: translate3d(-50px, 0, 0);
-    }
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+	0% {
+		opacity: 0;
+		transform: translate3d(-50px, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 .fade-in-right {
-    animation: fade-in-right-animation 0.3s ease-in-out;
+	animation: fade-in-right-animation 0.3s ease-in-out;
 }
 
 @keyframes fade-in-left-animation {
-    0% {
-        opacity: 0;
-        transform: translate3d(50px, 0, 0);
-    }
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+	0% {
+		opacity: 0;
+		transform: translate3d(50px, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 .fade-in-left {
-    animation: fade-in-left-animation 0.3s ease-in-out;
+	animation: fade-in-left-animation 0.3s ease-in-out;
 }

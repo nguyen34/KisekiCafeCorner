@@ -1,10 +1,12 @@
 @font-face {
-    font-family: 'Lexicon No1 Italic C Tab';
-    src: local('Lexicon No1 Italic C Tab'),
-         url('../assets/fonts/LexiconNo1ItalicCTab.ttf') format('truetype');
+	font-family: 'Lexicon No1 Italic C Tab';
+	src:
+		local('Lexicon No1 Italic C Tab'),
+		url('../assets/fonts/LexiconNo1ItalicCTab.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'Minion Pro Caption';
-    src: local('Minion Pro Caption'),
-         url('../assets/fonts/MinionProCaption.otf') format('truetype');
+	font-family: 'Minion Pro Caption';
+	src:
+		local('Minion Pro Caption'),
+		url('../assets/fonts/MinionProCaption.otf') format('truetype');
 }

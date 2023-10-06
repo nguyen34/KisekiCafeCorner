@@ -1,1 +1,1 @@
-export const GET_GREETING = "GET_GREETING"
+export const GET_GREETING = 'GET_GREETING';

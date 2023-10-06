@@ -1,22 +1,22 @@
 h1 {
-    font-size: 50px;
-    background: transparent;
+	font-size: 50px;
+	background: transparent;
 }
 
 .home-page {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    height: 90vh;
-    width: 100vw;
-    background: transparent;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	height: 90vh;
+	width: 100vw;
+	background: transparent;
 }
 
 .home-text {
-    margin-left: 400px;
-    width: 30%;
-    margin-top: 100px;
-    margin-bottom: auto;
-    z-index: 1;
+	margin-left: 400px;
+	width: 30%;
+	margin-top: 100px;
+	margin-bottom: auto;
+	z-index: 1;
 }
