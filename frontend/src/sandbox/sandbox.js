@@ -1,1 +1,5 @@
-// Sandbox file for testing JS code
+export function helloWorld() {
+	return 'Hello World!';
+}
+
+console.log(helloWorld());

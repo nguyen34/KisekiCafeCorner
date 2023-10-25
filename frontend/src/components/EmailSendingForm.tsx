@@ -28,6 +28,7 @@ const EmailSendingForm: React.FC = () => {
 			});
 	};
 
+	// Example of an effect hook re-rendering the page when name, email, or message changes
 	React.useEffect(() => {
 		const isValidEmail = validateEmail(email);
 		if (name === '' || !isValidEmail || message === '') {

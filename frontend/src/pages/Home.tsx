@@ -11,6 +11,14 @@ const Home: React.FC = () => {
 	React.useEffect(() => {
 		dispatch(setPageHeader('Home'));
 	});
+	// This is the equivalent of running code on mount and unmount
+	React.useEffect(() => {
+		console.log('Home Page Mounted');
+		return () => {
+			console.log('Home Page Unmounted');
+		};
+	}, []);
+
 	const message =
 		"Site's still a Work in Progress, hope to have a lot more going on during this landing page, but until then, feel free to navigate around using the menu icon on the top left!";
 	return (
