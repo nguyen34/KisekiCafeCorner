@@ -6,7 +6,7 @@ const Counter = () => {
 	const delayIncrement = () => {
 		setTimeout(() => {
 			setCounter(counter + 1);
-		}, 1000);
+		}, 500);
 	};
 
 	return (

@@ -18,6 +18,10 @@ type AppState = {
 	pageHeader: string;
 };
 
+type TestState = {
+	count: number;
+};
+
 //Store Action Types
 type ArticleAction = {
 	type: string;
@@ -33,6 +37,11 @@ type AppAction = {
 	type: string;
 	payload: any;
 };
+
+type TestAction = {
+	type: string;
+};
+
 
 type ArticleDispatchType = (args: ArticleAction) => ArticleAction;
 type LandingDispatchType = (args: LandingAction) => LandingAction;
