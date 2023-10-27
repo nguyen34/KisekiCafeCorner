@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import reducer from '../../store/index';
+import reducer from '../../../store/index';
 import ReduxCounter from '../ReduxCounter';
 
 interface RenderWithReduxProps {

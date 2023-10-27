@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../store/reducers/test/actionCreators';
+import { increment, decrement } from '../../store/reducers/test/actionCreators';
 import { Dispatch } from 'redux';
 
 const ReduxCounter: React.FC = () => {
